@@ -1,0 +1,75 @@
+version = 2
+enable_cursor_positioning = true
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'path'
+    style = 'plain'
+    template = '{{ .Path }} '
+    foreground = 'magenta'
+
+    [blocks.segments.properties]
+      max_width = 32
+      style = 'powerlevel'
+
+  [[blocks.segments]]
+    type = 'git'
+    style = 'plain'
+    template = '{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Staging.Changed }} {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} *{{ .StashCount }}{{ end }}'
+    foreground = 'lightGreen'
+
+    [blocks.segments.properties]
+      fetch_status = true
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'right'
+  overflow = 'hidden'
+
+  [[blocks.segments]]
+    type = 'executiontime'
+    style = 'plain'
+    foreground = 'yellow'
+
+    [blocks.segments.properties]
+      style = 'round'
+
+  [[blocks.segments]]
+    type = 'time'
+    style = 'plain'
+    template = ' {{ .CurrentDate | date .Format }}'
+    foreground = 'cyan'
+
+    [blocks.segments.properties]
+      time_format = '15:04:05'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    template = '❯ '
+    foreground_templates = [
+      "{{if gt .Code 0}}red{{end}}",
+      "{{if eq .Code 0}}blue{{end}}"
+    ]
+    # foreground = '#43D426'
+
+[transient_prompt]
+  style = 'plain'
+  template = '❯ '
+  foreground_templates = [
+    "{{if gt .Code 0}}red{{end}}",
+    "{{if eq .Code 0}}blue{{end}}"
+  ]
+
+[secondary_prompt]
+  foreground = 'blue'
+  template = '❯❯ '

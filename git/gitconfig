@@ -1,0 +1,22 @@
+# This is Git's per-user configuration file.
+[core]
+	editor = nvim
+  excludesfile = ~/.gitignore_global
+	pager = less
+[pack]
+	windowMemory = 32m
+[pull]
+	rebase = false
+[http]
+	sslverify = false
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[credential]
+	helper = store
+[rerere]
+	enabled = true
+[init]
+	defaultBranch = main
