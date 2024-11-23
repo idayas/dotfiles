@@ -90,3 +90,5 @@ HOMEBREW_NO_ENV_HINTS="true"
 
 # Surpress node warnings because im sick of seeing them
 export NODE_NO_WARNINGS=1
+
+export MANPAGER='nvim +Man!'

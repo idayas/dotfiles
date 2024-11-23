@@ -20,3 +20,6 @@
 	enabled = true
 [init]
 	defaultBranch = main
+[user]
+	name = Jordan DeDea
+	email = jordandedea@gmail.com
