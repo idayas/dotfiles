@@ -18,3 +18,7 @@ ln -sf $DOTFILES/git/gitconfig $HOME/.gitconfig
 
 # Git Ignore
 ln -sf $DOTFILES/git/gitignore_global $HOME/.gitignore_global
+
+# kitty
+rm -rf $HOME/.config/kitty
+ln -s $DOTFILES/kitty $HOME/.config/kitty
