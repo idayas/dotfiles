@@ -1,18 +1,5 @@
 return {
   {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("configs.custom.which-key")
-    end,
-  },
-  {
-    "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
-    opts = require "configs.conform",
-  },
-
-  {
     "neovim/nvim-lspconfig",
     config = function()
       require "configs.lspconfig"
@@ -32,14 +19,32 @@ return {
       highlight = {
         enable = true,
       },
-      autotag = {
-        enable = true,
-      },
     },
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
       require("configs.custom.treesitter")
     end,
+  },
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("configs.custom.which-key")
+    end,
+  },
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "typescript-language-server",
+        "tailwindcss-language-server",
+      }
+    }
+  },
+  {
+    "stevearc/conform.nvim",
+    -- event = 'BufWritePre', -- uncomment for format on save
+    opts = require "configs.conform",
   },
   -- Add more languages
   { "sheerun/vim-polyglot" },
