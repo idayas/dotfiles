@@ -36,6 +36,8 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "eslint-lsp",
+        "prettierd",
         "typescript-language-server",
         "tailwindcss-language-server",
       }
@@ -84,6 +86,14 @@ return {
   {
     "ku1ik/vim-pasta",
     event = "VeryLazy",
+  },
+
+  {
+    "nvimtools/none-ls.nvim",
+    event = "VeryLazy",
+    opts = function()
+      return require "configs.custom.null-ls"
+    end,
   }
 }
 

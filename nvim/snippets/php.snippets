@@ -1,0 +1,8 @@
+snippet nconn "New PDO Connection"
+  \$dbname = "${1}";
+  \$username = "${2}";
+  \$password = "${3}";
+
+  \$db = new PDO("mysql:host=localhost;dbname=\$dbname", \$username, \$password);
+
+

@@ -35,3 +35,5 @@ require "nvchad.autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+vim.g.snipmate_snippets_path = vim.fn.stdpath("config") .. "/snippets"

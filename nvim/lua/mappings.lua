@@ -30,9 +30,9 @@ map('v', 'p', '"_dP')
 -- map('i', ',,', '<Esc>A,');
 
 -- Move lines up and down with alt
-vim.keymap.set('i', '<A-j>', '<Esc>:move .+1<CR>==gi')
-vim.keymap.set('i', '<A-k>', '<Esc>:move .-2<CR>==gi')
-vim.keymap.set('n', '<A-j>', ':move .+1<CR>==')
-vim.keymap.set('n', '<A-k>', ':move .-2<CR>==')
-vim.keymap.set('v', '<A-j>', ":move '>+1<CR>gv=gv")
-vim.keymap.set('v', '<A-k>', ":move '<-2<CR>gv=gv")
+map('i', '<A-j>', '<Esc>:move .+1<CR>==gi')
+map('i', '<A-k>', '<Esc>:move .-2<CR>==gi')
+map('n', '<A-j>', ':move .+1<CR>==')
+map('n', '<A-k>', ':move .-2<CR>==')
+map('v', '<A-j>', ":move '>+1<CR>gv=gv")
+map('v', '<A-k>', ":move '<-2<CR>gv=gv")
