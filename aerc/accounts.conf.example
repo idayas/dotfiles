@@ -1,0 +1,8 @@
+# Delete this line when saving. Use https://myaccount.google.com/apppasswords to create app passwords
+
+[Personal]
+source        = imaps://<username>@gmail.com:<app-password>@imap.gmail.com:993
+outgoing      = smtps://<username>@gmail.com:<app-password>@smtp.gmail.com:465
+default       = INBOX
+from          = <Firstname Lastname> <<username>@gmail.com>
+cache-headers = true
