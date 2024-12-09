@@ -22,3 +22,7 @@ ln -sf $DOTFILES/git/gitignore_global $HOME/.gitignore_global
 # kitty
 rm -rf $HOME/.config/kitty
 ln -s $DOTFILES/kitty $HOME/.config/kitty
+
+# aerc
+rm -rf $HOME/.config/aerc
+ln -s $DOTFILES/aerc $HOME/.config/aerc

@@ -92,3 +92,6 @@ HOMEBREW_NO_ENV_HINTS="true"
 export NODE_NO_WARNINGS=1
 
 export MANPAGER='nvim +Man!'
+
+# Allows for proper config home of some terminal applications (ex aerc)
+export XDG_CONFIG_HOME="$HOME/.config"
