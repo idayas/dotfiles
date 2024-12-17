@@ -1,8 +1,6 @@
-# Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of theme, "random" to set random (echo $RANDOM_THEME to view). 
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random (if not empty)
@@ -55,7 +53,15 @@ nvm() {
 alias sweep="find . -name .DS_Store -type f -delete ; find -name .Trashes -type d -delete ; find . -type d | xargs dot_clean -m"
 
 # Mass Global Updates
-alias mgu="brew update; brew upgrade; brew upgrade --cask; npm update -g; omz update; bun upgrade; python -m pip install --upgrade pip;"
+mgu() {
+  brew update;
+  brew upgrade;
+  brew upgrade --cask;
+  npm update -g;
+  omz update;
+  bun upgrade;
+  python -m pip install --upgrade pip;
+}
 
 # bun completions
 [ -s "/Users/jordan/.bun/_bun" ] && source "/Users/jordan/.bun/_bun"
@@ -88,10 +94,17 @@ alias zlist="zoxide query -l -s"
 # Hide homebrew env hint
 HOMEBREW_NO_ENV_HINTS="true"
 
-# Surpress node warnings because im sick of seeing them
-export NODE_NO_WARNINGS=1
+# Surpress npm warnings because im sick of seeing them
+export npm_config_loglevel=silent
 
+# Change default manual pager from less to nvim
 export MANPAGER='nvim +Man!'
 
-# Allows for proper config home of some terminal applications (ex aerc)
+# Allows for proper config location (~/.config) of some terminal applications (ex aerc)
 export XDG_CONFIG_HOME="$HOME/.config"
+
+# . "$HOME/.local/bin/env"
+export PATH=$PATH:$HOME/go/bin
+
+# Set nvim as the default editor
+export EDITOR='nvim'
