@@ -50,6 +50,9 @@ nvm() {
     nvm "$@"
 }
 
+# Access minecraft terminal
+alias mct="docker exec -it minecraft rcon-cli"
+
 alias sweep="find . -name .DS_Store -type f -delete ; find -name .Trashes -type d -delete ; find . -type d | xargs dot_clean -m"
 
 # bun completions
