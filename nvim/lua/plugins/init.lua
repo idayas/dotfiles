@@ -94,6 +94,12 @@ return {
     opts = function()
       return require "configs.custom.null-ls"
     end,
+  },
+  {
+  "hrsh7th/nvim-cmp",
+  opts = function()
+    require "configs.custom.cmp"
+  end,
   }
 }
 
