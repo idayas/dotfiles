@@ -8,13 +8,20 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
-      "EmranMR/tree-sitter-blade"
+      "EmranMR/tree-sitter-blade",
     },
     opts = {
       ensure_installed = {
-        "vim", "lua", "vimdoc", "blade",
-        "html", "css", "php", "rust",
-        "javascript", "typescript"
+        "vim",
+        "lua",
+        "vimdoc",
+        "blade",
+        "html",
+        "css",
+        "php",
+        "rust",
+        "javascript",
+        "typescript",
       },
       highlight = {
         enable = true,
@@ -22,14 +29,14 @@ return {
     },
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
-      require("configs.custom.treesitter")
+      require "configs.custom.treesitter"
     end,
   },
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
     config = function()
-      require("configs.custom.which-key")
+      require "configs.custom.which-key"
     end,
   },
   {
@@ -40,8 +47,8 @@ return {
         "prettierd",
         "typescript-language-server",
         "tailwindcss-language-server",
-      }
-    }
+      },
+    },
   },
   {
     "stevearc/conform.nvim",
@@ -54,9 +61,9 @@ return {
   -- Enable * searching with visually selected text
   { "nelstrom/vim-visual-star-search" },
   {
-    'windwp/nvim-autopairs',
+    "windwp/nvim-autopairs",
     event = "InsertEnter",
-    config = true
+    config = true,
   },
   {
     "windwp/nvim-ts-autotag",
@@ -65,14 +72,14 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
     config = function()
-      require('nvim-ts-autotag').setup({
+      require("nvim-ts-autotag").setup {
         opts = {
           enable_close = true,
           enable_rename = true,
           enable_close_on_slash = false,
         },
-        per_filetype = {}  -- leaving empty since we want default behavior
-      })
+        per_filetype = {}, -- leaving empty since we want default behavior
+      }
     end,
   },
 
@@ -96,10 +103,18 @@ return {
     end,
   },
   {
-  "hrsh7th/nvim-cmp",
-  opts = function()
-    require "configs.custom.cmp"
-  end,
-  }
+    "hrsh7th/nvim-cmp",
+    opts = function()
+      require "configs.custom.cmp"
+    end,
+  },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+  },
 }
-
