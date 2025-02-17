@@ -111,3 +111,14 @@ export PATH=$PATH:$HOME/go/bin
 
 # Set nvim as the default editor
 export EDITOR='nvim'
+
+# Stop git from opening nvim every time I pull
+export GIT_MERGE_AUTOEDIT=no
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/jordan/.lmstudio/bin"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+if command -v symfony &>/dev/null; then
+  eval "$(symfony completion)"
+fi
