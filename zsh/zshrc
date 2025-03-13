@@ -76,9 +76,6 @@ export PATH="/Users/jordan/Library/Python/3.11/bin:$PATH"
 # Alias nvim to vim
 alias vim="nvim"
 
-# Set PHP to default path
-export PATH="/path/to/homebrew/php/bin:$PATH"
-
 # OhMyPosh
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
     eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/theme.toml)"

@@ -11,16 +11,29 @@ local servers = {
   "lua_ls",
   "eslint",
   "gopls",
-  "ts_ls"
+  "ts_ls",
 }
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- Set up intelephense separately with priority
-lspconfig.intelephense.setup {
+lspconfig.phpactor.setup {
   on_attach = nvlsp.on_attach,
   on_init = nvlsp.on_init,
   capabilities = nvlsp.capabilities,
-  priority = 100,  -- High priority for PHP
+  priority = 100, -- High priority for PHP
+  init_options = {
+    ["language_server_phpstan.enabled"] = false,
+    ["language_server_psalm.enabled"] = false,
+    ["language_server.diagnostics.enabled"] = true,
+    ["language_server.diagnostics.php.enabled"] = true,
+    -- Hide most warnings regarding missing type declarations
+    ["language_server.diagnostics.php.phpDocMissingReturn"] = false,
+    ["language_server.diagnostics.php.missingReturnType"] = false,
+    ["language_server.diagnostics.php.missingType"] = false,
+    ["language_server.diagnostics.php.missingVisibility"] = false,
+    ["language_server.diagnostics.php.isMixed"] = false,
+    ["language_server.diagnostics.php.deprecatedType"] = false,
+  },
 }
 
 -- lsps with default config
