@@ -21,12 +21,18 @@ lspconfig.phpactor.setup {
   capabilities = nvlsp.capabilities,
   priority = 100, -- High priority for PHP
   init_options = {
-    ["language_server.diagnostics_on_update"] = false,
-    ["language_server.diagnostics_on_open"] = false,
-    ["language_server.diagnostics_on_save"] = false,
     ["language_server_phpstan.enabled"] = false,
     ["language_server_psalm.enabled"] = false,
-    ["language_server.diagnostic_ignore_codes"] = {"missing_return_type"}
+    ["language_server.diagnostic_ignore_codes"] = {
+      "missing_return_type",
+      "missing_property_type",
+      "missing_param_type",
+      "missing_method",
+      "worse.docblock_missing_param",
+      "worse.missing_member",
+      "worse.unresolved_name",
+      "worse.missing_return_type"
+    },
   },
 }
 
