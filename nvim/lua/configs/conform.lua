@@ -1,15 +1,23 @@
 local options = {
-  formatters_by_ft = {
-    lua = { "stylua" },
-    -- css = { "prettier" },
-    -- html = { "prettier" },
+formatters_by_ft = {
+  php = { "php_cs_fixer" },
+  lua = { "stylua" },
+},
+formatters = {
+  php_cs_fixer = {
+    env = {
+      PHP_CS_FIXER_IGNORE_ENV = "1",
+    },
+    args = function()
+      local config_path = vim.fn.expand("~/.config/nvim/after/styles/php/php-cs-fixer.dist.php")
+      return {
+        "fix",
+        "--using-cache=no",
+        "--config=" .. config_path,
+        "$FILENAME"
+      }
+    end,
   },
-
-  -- format_on_save = {
-  --   -- These options will be passed to conform.format()
-  --   timeout_ms = 500,
-  --   lsp_fallback = true,
-  -- },
+},
 }
-
 return options

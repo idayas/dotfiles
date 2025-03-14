@@ -25,13 +25,11 @@ lspconfig.phpactor.setup {
     ["language_server_psalm.enabled"] = false,
     ["language_server.diagnostic_ignore_codes"] = {
       "missing_return_type",
-      "missing_property_type",
-      "missing_param_type",
-      "missing_method",
       "worse.docblock_missing_param",
       "worse.missing_member",
       "worse.unresolved_name",
-      "worse.missing_return_type"
+      "worse.missing_return_type",
+      "worse.docblock_missing_return_type"
     },
   },
 }
