@@ -57,6 +57,7 @@ mgu() {
   brew update;
   brew upgrade;
   brew upgrade --cask;
+  brew link --overwrite node;
   npm update -g;
   omz update;
   bun upgrade;
