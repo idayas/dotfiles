@@ -1,0 +1,6 @@
+snippet dfmt "Format date object (YYYY-MM-DD)"
+  ${1}.toISOString().split("T")[0]
+
+
+snippet dtfmt "Format date object (YYYY-MM-DD HH:ii:ss)"
+  ${1}.toISOString().replace("T", " ").substring(0, 19)  
