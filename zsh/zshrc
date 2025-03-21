@@ -120,3 +120,6 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 if command -v symfony &>/dev/null; then
   eval "$(symfony completion)"
 fi
+
+# Fix 'xterm-kitty' unknown terminal type in ssh
+alias ssh='TERM=xterm-256color ssh'

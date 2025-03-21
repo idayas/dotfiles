@@ -21,3 +21,11 @@ opt.sidescrolloff = 8
 
 -- Ask for confirmation instead of erroring when quitting without saving
 -- opt.confirm = true
+
+-- Fix PHP using /* */ instead of //
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "php",
+  callback = function()
+    vim.bo.commentstring = "// %s"
+  end
+})
