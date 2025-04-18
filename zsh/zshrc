@@ -123,3 +123,16 @@ fi
 
 # Fix 'xterm-kitty' unknown terminal type in ssh
 alias ssh='TERM=xterm-256color ssh'
+
+# Alias function for harlequin to launch in mysql (accepts database name as arguement)
+harlesql() {
+  harlequin -a mysql -h localhost -p 3306 -U root --password "" --database "$1"
+}
+
+
+# Herd injected PHP 8.4 configuration.
+export HERD_PHP_84_INI_SCAN_DIR="/Users/jordan/Library/Application Support/Herd/config/php/84/"
+
+
+# Herd injected PHP binary.
+export PATH="/Users/jordan/Library/Application Support/Herd/bin/":$PATH

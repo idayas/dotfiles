@@ -19,6 +19,7 @@ lspconfig.phpactor.setup {
   on_attach = nvlsp.on_attach,
   on_init = nvlsp.on_init,
   capabilities = nvlsp.capabilities,
+  filetypes = {"php", "blade"},
   priority = 100, -- High priority for PHP
   init_options = {
     ["language_server_phpstan.enabled"] = false,
