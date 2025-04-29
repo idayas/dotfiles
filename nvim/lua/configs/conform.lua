@@ -22,6 +22,7 @@ local options = {
     ["blade-formatter"] = {
       args = {
         "--write",
+        "--indent-size=2",
         "$FILENAME",
       },
       stdin = false,

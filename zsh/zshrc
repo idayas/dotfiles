@@ -72,7 +72,11 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Set python
-export PATH="/Users/jordan/Library/Python/3.11/bin:$PATH"
+export PATH="/opt/homebrew/opt/python@3.13/bin:$PATH"
+
+# Alias python3 to python
+alias python="python3"
+alias pip="pip3"
 
 # Alias nvim to vim
 alias vim="nvim"
