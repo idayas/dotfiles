@@ -25,3 +25,5 @@ map({ 'n', 'v', 'x' }, '<leader>s', ':e #<CR>')  -- Go to previous file
 
 map({ 'n', 'v', 'x' }, '<leader>S', ':sf #<CR>') -- Split find
 map({ 'n' }, '<leader>\\', ':vsplit<CR>')        -- Open new vsplit
+
+map('n', '<leader>x' , ":bd<CR>") -- Close open buffer
