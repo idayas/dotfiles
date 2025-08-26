@@ -1,5 +1,3 @@
-local map = vim.keymap.set
-
 -- Plugins
 vim.pack.add({
   { src = "https://github.com/catppuccin/nvim" },                    -- Theme
@@ -16,15 +14,13 @@ vim.pack.add({
 })
 
 -- Plugin setup
+local simple_plugins = { "mini.pick", "mason", "nvim-autopairs", "nvim-ts-autotag", "oil" }
+for _, plugin in ipairs(simple_plugins) do
+  require(plugin).setup()
+end
 
-local diff = require "mini.diff"
-local highlight = require "nvim-highlight-colors"
-local oil = require "oil"
-local todo = require "todo-comments"
-local ts_configs = require "nvim-treesitter.configs"
-local pick = require "mini.pick"
 
-diff.setup({
+require "mini.diff".setup({
   view = {
     style = 'sign',
     signs = { add = '┃', change = '┃', delete = '_' }
@@ -34,7 +30,7 @@ diff.setup({
   }
 })
 
-highlight.setup({
+require "nvim-highlight-colors".setup({
   render = 'virtual',
   virtual_symbol = '■',
   virtual_symbol_prex = '',
@@ -43,42 +39,11 @@ highlight.setup({
   enable_tailwind = true,
 })
 
-ts_configs.setup({
+require "nvim-treesitter.configs".setup({
   ensure_installed = { "blade", "php", "typescript", "javascript", "css", "html", "go", "c", "python", "sql" },
   highlight = { enable = true },
   indent = { enable = true }
 })
 
-local simple_plugins = { "mini.pick", "mason", "nvim-autopairs", "nvim-ts-autotag", "oil" }
-for _, plugin in ipairs(simple_plugins) do
-  require(plugin).setup()
-end
-
-
 -- LSPs (Autocomplete currently off by default, use <C-x><C-o>)
 vim.lsp.enable({ "lua_ls", "intelephense", "tailwindcss", "eslint", "gopls", "docker_language_server", "ts_ls" })
-
--- Theme
-vim.cmd("colorscheme catppuccin")
-
--- Plugin Keymaps
-map('n', '<leader>fo', pick.builtin.files, {desc = "Search files in current path"})
-map('n', '<leader>fg', pick.builtin.grep_live, {desc = "Search with live grep"})
-map('n', '<leader>oh', pick.builtin.help, {desc = "Search help docs"})
-map('n', '<leader>oo', pick.builtin.buffers, { desc = "Search open buffers"})
-map('n', '<leader>ff', vim.lsp.buf.format, { desc = "Format Current File" })
-map('n', '<leader>e', oil.open, { desc = "Open File Explorer (Oil)" })
-map({ 'n' }, '<leader>/', "gcc", { remap = true, desc = "Comment Toggle" })
-map({ 'v', 'x' }, '<leader>/', "gc", { remap = true, desc = "Comment Toggle for Multiline" })
-map('n', '<leader>up', vim.pack.update, { desc = "Update plugins" })
-map('n', ']t', todo.jump_next, { desc = "Next todo comment" })
-map('n', '[t', todo.jump_prev, { desc = "Previous todo comment" })
-
-
--- LSPs
-map('n', '<leader>d', '<cmd>lua vim.diagnostic.open_float()<CR>') -- Floating diagnostic window
-map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>')         -- Go to previous diagnostic
-map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>')         -- Go to previous diagnostic
-map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')           -- Go to definition
-map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')                 -- Hover help
-map('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')       -- Rename hovered element

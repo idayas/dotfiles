@@ -30,3 +30,5 @@ opt.sidescrolloff = 6               -- Horizontal scroll offset
 
 opt.clipboard = 'unnamedplus'       -- Set system clipboard
 -- opt.smartindent = true              -- Disabled because treesitter, keeping as ref
+
+vim.cmd("colorscheme catppuccin") -- Set colorscheme
