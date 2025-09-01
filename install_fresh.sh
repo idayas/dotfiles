@@ -2,7 +2,6 @@
 
 DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
-
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew update && brew upgrade
@@ -32,6 +31,5 @@ brew install --cask kitty
 rm -rf $HOME/.config/kitty
 ln -s $DOTFILES/kitty $HOME/.config/kitty
 
-# aerc
-# rm -rf $HOME/.config/aerc
-# ln -s $DOTFILES/aerc $HOME/.config/aerc
+# fonts
+brew install --cask font-fantasque-sans-mono-nerd-font
