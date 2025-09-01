@@ -26,10 +26,14 @@ ln -sf $DOTFILES/git/gitconfig $HOME/.gitconfig
 # Git Ignore
 ln -sf $DOTFILES/git/gitignore_global $HOME/.gitignore_global
 
+# fonts
+brew install --cask font-fantasque-sans-mono-nerd-font
+
 # kitty
 brew install --cask kitty
 rm -rf $HOME/.config/kitty
 ln -s $DOTFILES/kitty $HOME/.config/kitty
 
-# fonts
-brew install --cask font-fantasque-sans-mono-nerd-font
+# enable ctrl + cmd to drag
+defaults write -g NSWindowShouldDragOnGesture -bool true
+
