@@ -35,12 +35,29 @@ brew install --cask kitty
 rm -rf $HOME/.config/kitty
 ln -s $DOTFILES/kitty $HOME/.config/kitty
 
+## zoxide (better cd)
+brew install zoxide
+
+# Languages and Runtimes
 ## bun
 brew tap oven-sh/bun
 brew install bun
 
+# GoLang
+brew install go
+
 ## Composer (php)
 brew install composer
+
+# Additional applications
+brew install --cask cyberduck           # FTP 
+brew install --cask discord             # Comms Platform
+brew install --cask firefox@nightly     # Preferred Dev Browser
+brew install --cask herd                # Laravel Herd
+brew install --cask httpie-desktop      # Postman Alternative
+brew install --cask obsidian            # Notes
+brew install --cask orbstack            # Mac Specific Docker Runtime
+brew install --cask ungoogled-chromium  # Chrome without the googling
 
 # Quality of Life
 ## enable ctrl + cmd to drag
