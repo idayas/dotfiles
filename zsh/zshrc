@@ -49,10 +49,10 @@ mgu() {
   brew update;
   brew upgrade;
   brew upgrade --cask;
-  # brew link --overwrite node;
-  # npm update -g;
-  omz update;
+  brew link --overwrite node;
+  npm update -g;
   bun upgrade;
+  omz update;
   # python -m pip install --upgrade pip;
 }
 
