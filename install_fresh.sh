@@ -49,6 +49,10 @@ brew install go
 brew install zoxide
 brew tap oven-sh/bun
 brew install bun
+brew install node
+
+brew install micromamba
+/opt/homebrew/opt/micromamba/bin/mamba shell init --shell zsh --root-prefix ~/mamba
 
 echo "Creating symlinks..."
 mkdir -p $HOME/.config
