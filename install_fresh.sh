@@ -29,6 +29,7 @@ ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
 
 # Install Fonts
 brew install --cask font-fantasque-sans-mono-nerd-font
+brew install --cask font-fantasque-sans-mono
 
 echo "Installing GUI applications..."
 brew install --cask cyberduck           # FTP 
