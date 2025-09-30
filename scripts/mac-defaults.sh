@@ -18,3 +18,7 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Enable Cmd + Control to drag anywhere in a window
 defaults write -g NSWindowShouldDragOnGesture -bool true
+
+# Enable faster keyboard input, helpful for navigating in nvim
+defaults write -g InitialKeyRepeat -float 15.0 
+defaults write -g KeyRepeat -float 2 
