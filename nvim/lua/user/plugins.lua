@@ -10,11 +10,12 @@ vim.pack.add({
   { src = "https://github.com/windwp/nvim-autopairs" },              -- Auto adds matching brackets, quotes, etc
   { src = "https://github.com/windwp/nvim-ts-autotag" },             -- Adds auto matching tags form HTML
   { src = "https://github.com/brenoprata10/nvim-highlight-colors" }, -- Color code highlighting, ex #00FF00
+  { src = "https://github.com/tpope/vim-surround" },                 -- Allows for quickly editing various surroundings, ex "", '', (), {}
   { src = "https://github.com/folke/todo-comments.nvim" },           -- Todo comment formatting, ex  TODO:
 })
 
 -- Plugin setup
-local simple_plugins = { "mini.pick", "mason", "nvim-autopairs", "nvim-ts-autotag", "oil" }
+local simple_plugins = { "mini.pick", "mason", "nvim-autopairs", "nvim-ts-autotag", "oil", "todo-comments" }
 for _, plugin in ipairs(simple_plugins) do
   require(plugin).setup()
 end
