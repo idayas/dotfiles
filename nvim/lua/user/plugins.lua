@@ -47,4 +47,8 @@ require "nvim-treesitter.configs".setup({
 })
 
 -- LSPs (Autocomplete currently off by default, use <C-x><C-o>)
-vim.lsp.enable({ "lua_ls", "intelephense", "tailwindcss", "eslint", "gopls", "docker_language_server", "ts_ls" })
+vim.lsp.enable({
+  "lua_ls", "intelephense", "tailwindcss", "eslint",
+  "gopls", "docker_language_server", "ts_ls", "typescript-language-server",
+  "laravel_ls"
+})

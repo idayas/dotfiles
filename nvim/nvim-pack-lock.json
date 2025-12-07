@@ -1,0 +1,30 @@
+{
+  "plugins": {
+    "mason.nvim": {
+      "rev": "57e5a8a"
+    },
+    "mini.diff": {
+      "rev": "fbb93ea"
+    },
+    "mini.pick": {
+      "rev": "b435139"
+    },
+    "nvim": {
+      "rev": "ce4a8e0"
+    },
+    "nvim-autopairs": [],
+    "nvim-highlight-colors": [],
+    "nvim-lspconfig": {
+      "rev": "effe4bf"
+    },
+    "nvim-treesitter": [],
+    "nvim-ts-autotag": [],
+    "oil.nvim": {
+      "rev": "cbcb3f9"
+    },
+    "todo-comments.nvim": {
+      "rev": "31e3c38"
+    },
+    "vim-surround": []
+  }
+}

@@ -55,7 +55,9 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Set python
-export PATH="/opt/homebrew/opt/python@3.13/bin:$PATH"
+# export PATH="/opt/homebrew/opt/python@3.14/bin:$PATH"
+# Give homebrew priority
+export PATH="/opt/homebrew/bin:$PATH"
 
 # Alias python3 to python
 alias python="python3"
@@ -130,3 +132,7 @@ unset __mamba_setup
 # <<< mamba initialize <<<
 
 alias conda="mamba"
+
+
+# Herd injected PHP 8.3 configuration.
+export HERD_PHP_83_INI_SCAN_DIR="/Users/jordan/Library/Application Support/Herd/config/php/83/"
