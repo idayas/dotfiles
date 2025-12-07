@@ -1,54 +1,43 @@
 -- Plugins
 vim.pack.add({
-  { src = "https://github.com/catppuccin/nvim" },                    -- Theme
-  { src = "https://github.com/stevearc/oil.nvim" },                  -- File Browser
-  { src = "https://github.com/echasnovski/mini.pick" },              -- Quick picker for files
-  { src = "https://github.com/echasnovski/mini.diff" },              -- For seeing git differences
-  { src = "https://github.com/mason-org/mason.nvim" },               -- Keeping this for easy lsp installations and management
-  { src = 'https://github.com/neovim/nvim-lspconfig' },              -- Used for acutally running lsps
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter" },    -- Formatter
-  { src = "https://github.com/windwp/nvim-autopairs" },              -- Auto adds matching brackets, quotes, etc
-  { src = "https://github.com/windwp/nvim-ts-autotag" },             -- Adds auto matching tags form HTML
-  { src = "https://github.com/brenoprata10/nvim-highlight-colors" }, -- Color code highlighting, ex #00FF00
-  { src = "https://github.com/tpope/vim-surround" },                 -- Allows for quickly editing various surroundings, ex "", '', (), {}
-  { src = "https://github.com/folke/todo-comments.nvim" },           -- Todo comment formatting, ex  TODO:
+  -- Interface
+  "https://github.com/catppuccin/nvim",                    -- Theme
+  "https://github.com/nvim-treesitter/nvim-treesitter",    -- Formatter
+  "https://github.com/windwp/nvim-autopairs",              -- Auto adds matching brackets, quotes, etc
+  "https://github.com/brenoprata10/nvim-highlight-colors", -- Color code highlighting, ex #00FF00
+  "https://github.com/echasnovski/mini.diff",              -- For seeing git differences
+  "https://github.com/nvim-lualine/lualine.nvim",          -- Add custom status line at bottom of nvim
+
+  -- Quality of Life
+  "https://github.com/JoosepAlviste/nvim-ts-context-commentstring", -- Should in theory allow for context away commenting
+  "https://github.com/tpope/vim-surround",                          -- Allows for quickly editing various surroundings, ex "", '', (), {}
+  "https://github.com/windwp/nvim-ts-autotag",                      -- Adds auto matching tags form HTML
+  "https://github.com/folke/todo-comments.nvim",                    -- Todo comment formatting, ex  TODO:
+
+  -- Navigation
+  "https://github.com/stevearc/oil.nvim",     -- File Browser
+  "https://github.com/echasnovski/mini.pick", -- Quick picker for files
+
+  -- LSP
+  "https://github.com/neovim/nvim-lspconfig",                     -- Used for acutally running lsps
+  "https://github.com/mason-org/mason.nvim",                      -- Keeping this for easy lsp installations and management
+  "https://github.com/mason-org/mason-lspconfig.nvim",            -- Automatically enables all mason installed plugins
+  "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim", -- Allows you to ensure install for mason
 })
 
 -- Plugin setup
-local simple_plugins = { "mini.pick", "mason", "nvim-autopairs", "nvim-ts-autotag", "oil", "todo-comments" }
+local simple_plugins = {
+  "ts_context_commentstring", "mini.pick", "nvim-autopairs",
+  "nvim-ts-autotag", "oil", "todo-comments"
+}
+
 for _, plugin in ipairs(simple_plugins) do
   require(plugin).setup()
 end
 
-
-require "mini.diff".setup({
-  view = {
-    style = 'sign',
-    signs = { add = '┃', change = '┃', delete = '_' }
-  },
-  delay = {
-    text_change = 100
-  }
-})
-
-require "nvim-highlight-colors".setup({
-  render = 'virtual',
-  virtual_symbol = '■',
-  virtual_symbol_prex = '',
-  virtual_symbol_suffix = ' ',
-  virtual_symbol_position = 'inline',
-  enable_tailwind = true,
-})
-
-require "nvim-treesitter.configs".setup({
-  ensure_installed = { "blade", "php", "typescript", "javascript", "css", "html", "go", "c", "python", "sql" },
-  highlight = { enable = true },
-  indent = { enable = true }
-})
-
--- LSPs (Autocomplete currently off by default, use <C-x><C-o>)
-vim.lsp.enable({
-  "lua_ls", "intelephense", "tailwindcss", "eslint",
-  "gopls", "docker_language_server", "ts_ls", "typescript-language-server",
-  "laravel_ls"
-})
+-- Plugins with custom setup files
+require "user.plugins.lsp"
+require "user.plugins.lualine"
+require "user.plugins.mini-diff"
+require "user.plugins.nvim-highlight"
+require "user.plugins.treesitter"

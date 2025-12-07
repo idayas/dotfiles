@@ -1,5 +1,17 @@
 {
   "plugins": {
+    "lualine.nvim": {
+      "rev": "47f91c4",
+      "src": "https://github.com/nvim-lualine/lualine.nvim"
+    },
+    "mason-lspconfig.nvim": {
+      "rev": "0b9bb92",
+      "src": "https://github.com/mason-org/mason-lspconfig.nvim"
+    },
+    "mason-tool-installer.nvim": {
+      "rev": "517ef59",
+      "src": "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
+    },
     "mason.nvim": {
       "rev": "57e5a8a"
     },
@@ -10,15 +22,19 @@
       "rev": "b435139"
     },
     "nvim": {
-      "rev": "ce4a8e0"
+      "rev": "193e123"
     },
     "nvim-autopairs": [],
     "nvim-highlight-colors": [],
     "nvim-lspconfig": {
-      "rev": "effe4bf"
+      "rev": "a2bd1cf"
     },
     "nvim-treesitter": [],
     "nvim-ts-autotag": [],
+    "nvim-ts-context-commentstring": {
+      "rev": "1b212c2",
+      "src": "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
+    },
     "oil.nvim": {
       "rev": "cbcb3f9"
     },

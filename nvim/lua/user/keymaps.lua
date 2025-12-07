@@ -30,6 +30,7 @@ map('n', '<leader>x', vim.cmd.bdelete, { desc = "Close open buffer" })
 local oil = require "oil"
 local todo = require "todo-comments"
 local pick = require "mini.pick"
+local git = require "mini.diff"
 
 map('n', '<leader>fo', pick.builtin.files, { desc = "Search files in current path" })
 map('n', '<leader>fg', pick.builtin.grep_live, { desc = "Search with live grep" })
@@ -42,7 +43,9 @@ map({ 'v', 'x' }, '<leader>/', "gc", { remap = true, desc = "Comment Toggle for 
 map('n', '<leader>up', vim.pack.update, { desc = "Update plugins" })
 map('n', ']t', todo.jump_next, { desc = "Next todo comment" })
 map('n', '[t', todo.jump_prev, { desc = "Previous todo comment" })
+map('n', '<leader>gd', git.toggle_overlay, {desc = "Toggle git diff overlay"})
 
+map('n', '<leader>rn', vim.lsp.buf.rename, { desc = "Rename hovered element" })
 -- LSPs
 map('n', '<leader>d', vim.diagnostic.open_float, { desc = "Open floating diagnostic window" })
 map('n', '[d', vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })
