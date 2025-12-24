@@ -22,3 +22,7 @@ defaults write -g NSWindowShouldDragOnGesture -bool true
 # Enable faster keyboard input, helpful for navigating in nvim
 defaults write -g InitialKeyRepeat -float 15.0 
 defaults write -g KeyRepeat -float 2 
+
+# Turn off “Show suggested and recent apps in Dock”
+defaults write com.apple.dock show-recents -bool false
+killall Dock

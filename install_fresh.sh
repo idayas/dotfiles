@@ -31,7 +31,8 @@ ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
 brew install --cask font-fantasque-sans-mono-nerd-font
 brew install --cask font-fantasque-sans-mono
 
-echo "Installing GUI applications..."
+echo "Installing GUI applications...\n\n"
+brew install --cask arc                 # Web browser I prefer
 brew install --cask cyberduck           # FTP 
 brew install --cask discord             # Comms Platform
 brew install --cask firefox@nightly     # Preferred Dev Browser
