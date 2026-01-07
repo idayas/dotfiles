@@ -43,6 +43,7 @@ brew install --cask netbirdio/tap/netbird-ui  # VPN
 brew install --cask obsidian                  # Notes
 brew install --cask orbstack                  # Mac Specific Docker Runtime
 brew install --cask ungoogled-chromium        # Chrome without the googling
+brew install --cask utm                       # FOSS Virtual Machine specific for Mac M-Series
 
 echo "Installing CLI tools..."
 brew install neovim --HEAD
@@ -53,6 +54,7 @@ brew install zoxide
 brew tap oven-sh/bun
 brew install bun
 brew install node
+brew install tealdeer                         # TLDR in terminal
 
 brew install micromamba
 /opt/homebrew/opt/micromamba/bin/mamba shell init --shell zsh --root-prefix ~/mamba
