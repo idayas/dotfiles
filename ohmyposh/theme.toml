@@ -26,6 +26,9 @@ enable_cursor_positioning = true
     foreground = 'lightGreen'
     type = 'git'
     style = 'plain'
+  
+    [properties]
+      fetch_status = true
 
 [[blocks]]
   type = 'prompt'

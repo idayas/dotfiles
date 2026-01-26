@@ -1,0 +1,98 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "os": "#ACB0BE",
+    "pink": "#F5C2E7",
+    "lavender": "#B4BEFE",
+    "blue":  "#89B4FA",
+    "sky": "#89dceb",
+    "yellow": "#f9e2af"
+  },
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground_templates": ["{{if gt .Code 0}}red{{end}}", "{{if eq .Code 0}}blue{{end}}"],
+    "template": "❯ "
+  },
+  "secondary_prompt": {
+    "template": "❯❯ ",
+    "foreground":"p:blue"
+  },
+  "blocks": [
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "p:os",
+          "style": "plain",
+          "template": "{{.Icon}} ",
+          "type": "os"
+        },
+        {
+          "foreground": "p:pink",
+          "options": {
+            "folder_icon": "\ue5fe",
+            "home_icon": "~",
+            "style": "agnoster_short"
+          },
+          "style": "plain",
+          "template": "{{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "foreground": "p:lavender",
+          "options": {
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "source": "cli",
+            "branch_icon": "\ue725 ",
+            "cherry_pick_icon": "\ue29b ",
+            "commit_icon": "\uf417 ",
+            "merge_icon": "\ue727 ",
+            "no_commits_icon": "\uf0c3 ",
+            "rebase_icon": "\ue728 ",
+            "revert_icon": "\uf0e2 ",
+            "tag_icon": "\uf412 "
+          },
+          "template": "{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}",
+          "style": "plain",
+          "type": "git"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "foreground": "p:yellow",
+          "type": "executiontime",
+          "style": "plain"
+        },
+        {
+          "template": " {{ .CurrentDate | date .Format }}",
+          "foreground": "p:sky",
+          "type": "time",
+          "style": "plain"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "template": "❯",
+          "type": "text",
+          "style": "plain",
+          "foreground_templates": ["{{if gt .Code 0}}red{{end}}", "{{if eq .Code 0}}blue{{end}}"]
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "enable_cursor_positioning": true,
+  "version": 4
+}
