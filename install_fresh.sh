@@ -33,6 +33,7 @@ brew install --cask font-fantasque-sans-mono
 
 echo "Installing GUI applications...\n\n"
 brew install --cask arc                       # Web browser I prefer
+brew install --cask affinity                  # Free graphic design software
 brew install --cask cyberduck                 # FTP 
 brew install --cask discord                   # Comms Platform
 brew install --cask firefox@nightly           # Preferred Dev Browser
@@ -40,8 +41,10 @@ brew install --cask herd                      # Laravel Herd
 brew install --cask httpie-desktop            # Postman Alternative
 brew install --cask kitty                     # Terminal
 brew install --cask netbirdio/tap/netbird-ui  # VPN
+brew install --cask netnewswire               # RSS Reader
 brew install --cask obsidian                  # Notes
 brew install --cask orbstack                  # Mac Specific Docker Runtime
+brew install --cask pika                      # Mac specific colour grabbing tool
 brew install --cask ungoogled-chromium        # Chrome without the googling
 brew install --cask utm                       # FOSS Virtual Machine specific for Mac M-Series
 
@@ -55,6 +58,7 @@ brew tap oven-sh/bun
 brew install bun
 brew install node
 brew install tealdeer                         # TLDR in terminal
+brew install ripgrep
 
 brew install micromamba
 /opt/homebrew/opt/micromamba/bin/mamba shell init --shell zsh --root-prefix ~/mamba

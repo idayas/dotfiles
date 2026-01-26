@@ -7,3 +7,9 @@ require "mason-tool-installer".setup({
     "ts_ls", "intelephense", "gopls", "eslint"
   }
 })
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(ev)
+    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = ev.buf, desc= "Open Code Action Dialog" })
+  end,
+})

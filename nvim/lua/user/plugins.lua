@@ -9,7 +9,7 @@ vim.pack.add({
   "https://github.com/nvim-lualine/lualine.nvim",          -- Add custom status line at bottom of nvim
 
   -- Quality of Life
-  "https://github.com/JoosepAlviste/nvim-ts-context-commentstring", -- Should in theory allow for context away commenting
+  "https://github.com/JoosepAlviste/nvim-ts-context-commentstring", -- Should in theory allow for context aware commenting
   "https://github.com/tpope/vim-surround",                          -- Allows for quickly editing various surroundings, ex "", '', (), {}
   "https://github.com/windwp/nvim-ts-autotag",                      -- Adds auto matching tags form HTML
   "https://github.com/folke/todo-comments.nvim",                    -- Todo comment formatting, ex  TODO:
