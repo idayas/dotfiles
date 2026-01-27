@@ -59,6 +59,7 @@ brew install bun
 brew install node
 brew install tealdeer                         # TLDR in terminal
 brew install ripgrep
+brew install caarlos0/tap/timer
 
 brew install micromamba
 /opt/homebrew/opt/micromamba/bin/mamba shell init --shell zsh --root-prefix ~/mamba
