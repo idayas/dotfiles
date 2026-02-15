@@ -5,5 +5,20 @@ require "nvim-treesitter.configs".setup({
     "ipkg"
   },
   highlight = { enable = true },
-  indent = { enable = true },
+  indent = { 
+    enable = true,
+    disable = {
+      "html"
+    }
+  },
+})
+
+-- Add support for  
+vim.filetype.add({
+  extension = {
+    blade = "blade",
+  },
+  pattern = {
+    [".*%.blade%.php"] = "blade",
+  },
 })

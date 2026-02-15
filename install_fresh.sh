@@ -61,8 +61,17 @@ brew install tealdeer                         # TLDR in terminal
 brew install ripgrep
 brew install caarlos0/tap/timer
 
-brew install micromamba
-/opt/homebrew/opt/micromamba/bin/mamba shell init --shell zsh --root-prefix ~/mamba
+# Install Rust and build blink.cmp
+echo "Installing Rust..."
+if ! command -v rustup &> /dev/null; then
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+  # Source cargo environment for this session
+  source "$HOME/.cargo/env"
+fi
+
+echo "Installing Rust nightly toolchain..."
+rustup toolchain install nightly
+rustup update nightly
 
 echo "Creating symlinks..."
 mkdir -p $HOME/.config
@@ -77,6 +86,18 @@ ln -s $DOTFILES/kitty $HOME/.config/kitty
 
 ln -sf $DOTFILES/git/gitconfig $HOME/.gitconfig
 ln -sf $DOTFILES/git/gitignore_global $HOME/.gitignore_global
+
+echo "Building blink.cmp fuzzy matcher..."
+BLINK_PATH="$HOME/.local/share/nvim/site/pack/core/opt/blink.cmp"
+if [[ -d "$BLINK_PATH" ]]; then
+  cd "$BLINK_PATH"
+  cargo +nightly build --release
+  cd -
+  echo "  blink.cmp built successfully"
+else
+  echo "Note: blink.cmp not found yet. Run nvim first to install plugins, then run:"
+  echo "  cd ~/.local/share/nvim/site/pack/core/opt/blink.cmp && cargo +nightly build --release"
+fi
 
 echo "Setting Mac system preferences..."
 if [[ -f $DOTFILES/scripts/mac-defaults.sh ]]; then
