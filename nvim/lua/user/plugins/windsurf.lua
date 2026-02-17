@@ -28,5 +28,4 @@ vim.keymap.set('i', '<M-]>', function() return vim.fn['codeium#CycleCompletions'
 vim.keymap.set('i', '<M-[>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
 vim.keymap.set('i', '<M-w>', function() return vim.fn['codeium#AcceptNextWord']() end, { expr = true, silent = true })
 vim.keymap.set('i', '<M-l>', function() return vim.fn['codeium#AcceptNextLine']() end, { expr = true, silent = true })
-vim.keymap.set('i', '<M-c>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
-
+vim.keymap.set('i', '<M-e>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
