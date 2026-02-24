@@ -109,33 +109,18 @@ fi
 # Fix 'xterm-kitty' unknown terminal type in ssh
 alias ssh='TERM=xterm-256color ssh'
 
-# Herd injected PHP 8.4 configuration.
-export HERD_PHP_84_INI_SCAN_DIR="/Users/jordan/Library/Application Support/Herd/config/php/84/"
-
 # Herd injected PHP binary.
 export PATH="/Users/jordan/Library/Application Support/Herd/bin/":$PATH
 
+# Herd injected PHP 8.3 configuration.
+export HERD_PHP_83_INI_SCAN_DIR="/Users/jordan/Library/Application Support/Herd/config/php/83/"
+# Herd injected PHP 8.4 configuration.
+export HERD_PHP_84_INI_SCAN_DIR="/Users/jordan/Library/Application Support/Herd/config/php/84/"
 # Herd injected PHP 8.5 configuration.
 export HERD_PHP_85_INI_SCAN_DIR="/Users/jordan/Library/Application Support/Herd/config/php/85/"
 
-# >>> mamba initialize >>>
-# !! Contents within this block are managed by 'mamba shell init' !!
-export MAMBA_EXE='/opt/homebrew/opt/micromamba/bin/mamba';
-export MAMBA_ROOT_PREFIX='/Users/jordan/mamba';
-__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__mamba_setup"
-else
-    alias mamba="$MAMBA_EXE"  # Fallback on help from mamba activate
-fi
-unset __mamba_setup
-# <<< mamba initialize <<<
-
 alias conda="mamba"
 
-
-# Herd injected PHP 8.3 configuration.
-export HERD_PHP_83_INI_SCAN_DIR="/Users/jordan/Library/Application Support/Herd/config/php/83/"
 
 
 # Herd injected NVM configuration
@@ -143,6 +128,3 @@ export NVM_DIR="/Users/jordan/Library/Application Support/Herd/config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 [[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
-
-# Added by Antigravity
-export PATH="/Users/jordan/.antigravity/antigravity/bin:$PATH"
