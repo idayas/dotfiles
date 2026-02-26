@@ -28,9 +28,10 @@ opt.splitright = true               -- Defaults new vsplits to create right
 opt.scrolloff = 6                   -- Vertical scroll offset
 opt.sidescrolloff = 6               -- Horizontal scroll offset
 
-opt.confirm = true -- ask for confirmation instead of erroring when quitting after making changes
+opt.confirm = true                  -- ask for confirmation instead of erroring when quitting after making changes
 
 opt.clipboard = 'unnamedplus'       -- Set system clipboard
--- opt.smartindent = true              -- Disabled because treesitter, keeping as ref
+opt.smartindent = false              -- Disabled because treesitter, keeping as ref
+opt.autoindent = true
 
 vim.cmd("colorscheme catppuccin") -- Set colorscheme
