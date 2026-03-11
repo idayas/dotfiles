@@ -9,17 +9,13 @@ vim.api.nvim_create_autocmd('FileType', {
 
     local lang = vim.bo[args.buf].filetype
 
-    if lang == 'php' then
-      -- Nuke Neovim's default PHP indent rules for this buffer
-      vim.bo[args.buf].indentexpr = ""
-      vim.bo[args.buf].smartindent = false
-      vim.bo[args.buf].cindent = false
-      vim.bo[args.buf].autoindent = true
-      vim.bo[args.buf].indentkeys = "" -- Stops weird jumps when typing braces/brackets
-    else
-      -- Use Treesitter indentation for everything else
-      vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-    end
+    -- Use simple, reliable auto-indent for all file types
+    -- This approach works consistently and avoids problematic treesitter indentation
+    vim.bo[args.buf].indentexpr = ""
+    vim.bo[args.buf].smartindent = false
+    vim.bo[args.buf].cindent = false
+    vim.bo[args.buf].autoindent = true
+    vim.bo[args.buf].indentkeys = "" -- Stops weird jumps when typing braces/brackets
   end,
 })
 
