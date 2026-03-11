@@ -20,4 +20,24 @@ require('blink.cmp').setup({
       auto_show = true,
     },
   },
+
+  sources = {
+    -- specific modules you want enabled
+    default = { 'lsp', 'path', 'snippets', 'buffer' },
+
+    transform_items = function(ctx, items)
+      -- Get the current buffer's filetype
+      local ft = vim.bo[ctx.bufnr].filetype
+
+      -- Only filter for HTML-like languages to avoid affecting code in other files
+      if ft == 'html' or ft == 'xml' or ft == 'vue' or ft == 'svelte' or ft == 'eruby' or ft == 'php' then
+        return vim.tbl_filter(function(item)
+          -- Filter out items that start with </
+          return item.label:sub(1, 2) ~= '</'
+        end, items)
+      end
+
+      return items
+    end,
+  },
 })
