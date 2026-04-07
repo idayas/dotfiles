@@ -31,7 +31,7 @@ require "mason-lspconfig".setup({
 require "mason-tool-installer".setup({
   ensure_installed = {
     "lua_ls", "docker_language_server", "tailwindcss",
-    "ts_ls", "intelephense", "gopls", "eslint"
+    "ts_ls", "intelephense", "gopls", "eslint", "terraform-ls"
   }
 })
 

@@ -25,7 +25,11 @@ vim.pack.add({
   "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim", -- Allows you to ensure install for mason
 
   -- Completion
-  "https://github.com/Saghen/blink.cmp",                        -- Fast completion engine
+  -- "https://github.com/Saghen/blink.cmp",                        -- Fast completion engine
+  {
+    src = "https://github.com/Saghen/blink.cmp",
+    version = vim.version.range("^1"),
+  },
   "https://github.com/Exafunction/windsurf.vim",                -- AI completion engine
 })
 
