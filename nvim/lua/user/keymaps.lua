@@ -46,6 +46,14 @@ map('n', '[t', todo.jump_prev, { desc = "Previous todo comment" })
 map('n', '<leader>gd', git.toggle_overlay, {desc = "Toggle git diff overlay"})
 
 map('n', '<leader>rn', vim.lsp.buf.rename, { desc = "Rename hovered element" })
+
+local function toggle_codeium()
+  vim.g.codeium_enabled = not vim.g.codeium_enabled
+  local status = vim.g.codeium_enabled and "enabled" or "disabled"
+  vim.notify("Codeium " .. status, vim.log.levels.INFO, { title = "AI Completions" })
+end
+map('n', '<leader>ai', toggle_codeium, { desc = "Toggle AI completions (Codeium)" })
+
 -- LSPs
 map('n', '<leader>d', vim.diagnostic.open_float, { desc = "Open floating diagnostic window" })
 map('n', '[d', vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })

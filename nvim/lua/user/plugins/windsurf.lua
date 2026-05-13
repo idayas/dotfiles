@@ -1,5 +1,6 @@
 -- Disable default Tab binding
 vim.g.codeium_no_map_tab = true
+vim.g.codeium_enabled = true
 
 -- Smart Tab: Prioritize blink.cmp menu, then AI, then normal Tab
 vim.keymap.set('i', '<Tab>', function()
