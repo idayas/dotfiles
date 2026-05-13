@@ -23,6 +23,14 @@ vim.pack.add({
   "https://github.com/mason-org/mason.nvim",                      -- Keeping this for easy lsp installations and management
   "https://github.com/mason-org/mason-lspconfig.nvim",            -- Automatically enables all mason installed plugins
   "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim", -- Allows you to ensure install for mason
+
+  -- Completion
+  -- "https://github.com/Saghen/blink.cmp",                        -- Fast completion engine
+  {
+    src = "https://github.com/Saghen/blink.cmp",
+    version = vim.version.range("^1"),
+  },
+  "https://github.com/Exafunction/windsurf.vim",                -- AI completion engine
 })
 
 -- Plugin setup
@@ -37,6 +45,8 @@ end
 
 -- Plugins with custom setup files
 require "user.plugins.lsp"
+require "user.plugins.blink"
+require "user.plugins.windsurf"
 require "user.plugins.lualine"
 require "user.plugins.mini-diff"
 require "user.plugins.nvim-highlight"

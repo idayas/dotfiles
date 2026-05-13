@@ -10,6 +10,10 @@ ln -s $DOTFILES/nvim $HOME/.config/nvim
 rm -rf $HOME/.config/ohmyposh
 ln -s $DOTFILES/ohmyposh $HOME/.config/ohmyposh
 
+# Aerospace
+rm -rf $HOME/.config/aerospace
+ln -s $DOTFILES/aerospace $HOME/.config/aerospace
+
 # zsh
 ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
 
