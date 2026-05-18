@@ -1,37 +1,53 @@
-require "mason".setup()
-require "mason-lspconfig".setup({
-  automatic_installation = true,
-  handlers = {
-    function(server_name)
-      local capabilities = require('blink.cmp').get_lsp_capabilities()
+local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-      local config = {
-        capabilities = capabilities
-      }
+vim.lsp.config('*', {
+  capabilities = capabilities,
+})
 
-      if server_name == "html" then
-        config.init_options = {
-          provideFormatter = true,
-          embeddedLanguages = { css = true, javascript = true },
-          configurationSection = { "html", "css", "javascript" }
-        }
-        config.settings = {
-          html = {
-            autoClosingTags = false,
-          }
-        }
-      end
-
-      require('lspconfig')[server_name].setup(config)
-    end,
+vim.lsp.config('html', {
+  init_options = {
+    provideFormatter = true,
+    embeddedLanguages = { css = true, javascript = true },
+    configurationSection = { "html", "css", "javascript" }
+  },
+  settings = {
+    html = {
+      autoClosingTags = false,
+    }
   }
 })
+
+vim.lsp.config('lua_ls', {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim" },
+      },
+      runtime = {
+        version = 'LuaJIT',
+        path = {
+          'lua/?.lua',
+          'lua/?/init.lua',
+        },
+      },
+      workspace = {
+        checkThirdParty = false,
+        library = {
+          vim.env.VIMRUNTIME,
+        },
+      },
+    },
+  },
+})
+
+require "mason".setup()
+require "mason-lspconfig".setup()
 
 -- LSPs (Autocomplete currently off by default, use <C-x><C-o>)
 require "mason-tool-installer".setup({
   ensure_installed = {
     "lua_ls", "docker_language_server", "tailwindcss",
-    "ts_ls", "intelephense", "gopls", "eslint", "terraform-ls"
+    "ts_ls", "intelephense", "gopls", "eslint", "terraform-ls", "rumdl"
   }
 })
 
